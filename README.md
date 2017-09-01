@@ -12,7 +12,7 @@ The program is displayed in the notification area in the task bar. Right-clickin
 When the program is started and ViewNX is not running, it is started automatically.
 
 The available settings are as follows.
-Program Path: Path to the executable of ViewNX
-Process Name: Name of the ViewNX process
-Load Treshold: CPU load of ViewNX which is considered busy, in percent
-Update Interval: Interval of CPU load and icon position updates, in milliseconds
+*Program Path: Path to the executable of ViewNX
+*Process Name: Name of the ViewNX process
+*Load Treshold: CPU load of ViewNX which is considered busy, in percent
+*Update Interval: Interval of CPU load and icon position updates, in milliseconds
