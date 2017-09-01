@@ -1,0 +1,11 @@
+
+.vs/*
+bin/Debug/*
+bin/Release/*
+obj/*
+Resources/busy_icon-old.png
+Resources/busy_icon-simple.png
+Resources/status_icon_busy-full.png
+Resources/status_icon_inactive-full.png
+Resources/status_icon_ready-full.png
+!bin/Release/ViewNX Helper.exe

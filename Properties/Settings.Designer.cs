@@ -22,5 +22,53 @@ namespace ViewNxHelper.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Nikon\\ViewNX 2\\ViewNX 2\\ViewNX2.exe")]
+        public string TargetProgramPath {
+            get {
+                return ((string)(this["TargetProgramPath"]));
+            }
+            set {
+                this["TargetProgramPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ViewNX2")]
+        public string TargetProcName {
+            get {
+                return ((string)(this["TargetProcName"]));
+            }
+            set {
+                this["TargetProcName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int UpdateInterval {
+            get {
+                return ((int)(this["UpdateInterval"]));
+            }
+            set {
+                this["UpdateInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int LoadTreshold {
+            get {
+                return ((int)(this["LoadTreshold"]));
+            }
+            set {
+                this["LoadTreshold"] = value;
+            }
+        }
     }
 }

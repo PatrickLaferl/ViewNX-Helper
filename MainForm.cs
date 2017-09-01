@@ -33,33 +33,35 @@
         private Timer startTimer;
         private Timer updateTimer;
         private PerformanceCounter processCpu;
-        private const string procName = "ViewNX2";
-        private const string procPath = @"C:\Program Files\Nikon\ViewNX 2\ViewNX 2\ViewNX2.exe";
 
         public MainForm()
         {
             this.InitializeComponent();
 
             this.updateTimer = new Timer();
-            this.updateTimer.Interval = 1000;
+            this.updateTimer.Interval = Properties.Settings.Default.UpdateInterval;
             this.updateTimer.Tick += this.UpdateTimer_Tick;
 
             this.startTimer = new Timer();
-            this.startTimer.Interval = 1000;
+            this.startTimer.Interval = Properties.Settings.Default.UpdateInterval;
             this.startTimer.Tick += this.StartTimer_Tick;
             this.startTimer.Start();
 
-            if (Process.GetProcessesByName(procName).Length < 1)
+            if (Process.GetProcessesByName(this.Settings.TargetProcName).Length < 1)
             {
                 this.StartProgram();
-                this.SetState(State.Ready);
-            }
-            else
-            {
-                this.SetState(State.Inactive);
             }
 
+            this.SetState(State.Ready);
             this.TryStartUpdate();
+        }
+
+        private Properties.Settings Settings
+        {
+            get
+            {
+                return Properties.Settings.Default;
+            }
         }
 
         private void SetState(State s)
@@ -90,7 +92,7 @@
         {
             try
             {
-                this.processCpu = new PerformanceCounter("Process", "% Processor Time", procName);
+                this.processCpu = new PerformanceCounter("Process", "% Processor Time", this.Settings.TargetProcName);
                 this.processCpu.NextValue();
             }
             catch
@@ -111,7 +113,7 @@
 
         private void RepositionWindow()
         {
-            var proc = Process.GetProcessesByName(procName)[0];
+            var proc = Process.GetProcessesByName(this.Settings.TargetProcName)[0];
             var handle = proc.MainWindowHandle;
 
             var focus = GetForegroundWindow();
@@ -138,7 +140,7 @@
             try
             {
                 var value = this.processCpu.NextValue() / Environment.ProcessorCount;
-                if (value > 5)
+                if (value > this.Settings.LoadTreshold)
                 {
                     this.BackgroundImage = Properties.Resources.busy_icon;
                     this.SetState(State.Busy);
@@ -161,7 +163,7 @@
 
         private void StartProgram()
         {
-            Process.Start(procPath);
+            Process.Start(this.Settings.TargetProgramPath);
         }
 
         private void StartTimer_Tick(object sender, EventArgs e)
@@ -177,6 +179,11 @@
         private void startViewNXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.StartProgram();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsForm.ShowSingleton();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

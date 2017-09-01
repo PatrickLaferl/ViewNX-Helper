@@ -34,6 +34,7 @@
             this.taskBarMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.startViewNXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taskBarMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,23 +48,31 @@
             // 
             this.taskBarMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startViewNXToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.taskBarMenu.Name = "taskBarMenu";
-            this.taskBarMenu.Size = new System.Drawing.Size(153, 70);
+            this.taskBarMenu.Size = new System.Drawing.Size(152, 70);
             // 
             // startViewNXToolStripMenuItem
             // 
             this.startViewNXToolStripMenuItem.Name = "startViewNXToolStripMenuItem";
-            this.startViewNXToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.startViewNXToolStripMenuItem.Text = "Start ViewNX";
+            this.startViewNXToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.startViewNXToolStripMenuItem.Text = "Start ViewNX 2";
             this.startViewNXToolStripMenuItem.Click += new System.EventHandler(this.startViewNXToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -95,6 +104,7 @@
         private System.Windows.Forms.ContextMenuStrip taskBarMenu;
         private System.Windows.Forms.ToolStripMenuItem startViewNXToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 
