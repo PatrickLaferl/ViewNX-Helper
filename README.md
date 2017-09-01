@@ -3,7 +3,7 @@ Helper utility for Nikon ViewNX 2.
 
 Nikon ViewNX 2 does not seem to display the progress of the current image editing operation. Because of this, it is not always easy to tell whether an image adjustment has already been applied or not.
 
-This program displays an icon overlayed on top of VievNX, indicating that an operation is still in progress. The icon disappears when the operation has finished.
+This program displays an icon overlayed on top of ViewNX, indicating that an operation is still in progress. The icon disappears when the operation has finished.
 
 This is achieved by monitoring the CPU load of the ViewNX process.
 
