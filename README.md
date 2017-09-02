@@ -16,3 +16,7 @@ The available settings are as follows.
 * Process Name: Name of the ViewNX process
 * Load Treshold: CPU load of ViewNX which is considered busy, in percent
 * Update Interval: Interval of CPU load and icon position updates, in milliseconds
+
+Screenshot:
+
+![Screenshot of busy-indicator](http://oi67.tinypic.com/153ql9f.jpg "Screenshot of busy-indicator")
