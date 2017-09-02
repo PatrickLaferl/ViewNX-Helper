@@ -163,7 +163,16 @@
 
         private void StartProgram()
         {
-            Process.Start(this.Settings.TargetProgramPath);
+            try
+            {
+                Process.Start(this.Settings.TargetProgramPath);
+            }
+            catch (Exception ex)
+            {
+                string text = $"Error starting \"{this.Settings.TargetProgramPath}\":\n\n";
+                text += ex.Message;
+                MessageBox.Show(text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void StartTimer_Tick(object sender, EventArgs e)

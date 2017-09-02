@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.intervalSpinner = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.restoreButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loadTreshSpinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervalSpinner)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(308, 93);
+            this.okButton.Location = new System.Drawing.Point(364, 120);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(118, 23);
             this.okButton.TabIndex = 0;
@@ -106,13 +107,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progPathText.Location = new System.Drawing.Point(111, 6);
             this.progPathText.Name = "progPathText";
-            this.progPathText.Size = new System.Drawing.Size(263, 20);
+            this.progPathText.Size = new System.Drawing.Size(319, 20);
             this.progPathText.TabIndex = 6;
             // 
             // browseButton
             // 
             this.browseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.browseButton.Location = new System.Drawing.Point(380, 4);
+            this.browseButton.Location = new System.Drawing.Point(436, 4);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(46, 23);
             this.browseButton.TabIndex = 7;
@@ -166,13 +167,25 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "ms";
             // 
+            // restoreButton
+            // 
+            this.restoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.restoreButton.Location = new System.Drawing.Point(228, 120);
+            this.restoreButton.Name = "restoreButton";
+            this.restoreButton.Size = new System.Drawing.Size(130, 23);
+            this.restoreButton.TabIndex = 12;
+            this.restoreButton.Text = "Restore defaults";
+            this.restoreButton.UseVisualStyleBackColor = true;
+            this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
+            // 
             // SettingsForm
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.okButton;
-            this.ClientSize = new System.Drawing.Size(438, 128);
+            this.ClientSize = new System.Drawing.Size(494, 155);
+            this.Controls.Add(this.restoreButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.intervalSpinner);
             this.Controls.Add(this.label5);
@@ -188,6 +201,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(294, 0);
             this.Name = "SettingsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "NiewNX Helper Settings";
@@ -212,5 +226,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown intervalSpinner;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button restoreButton;
     }
 }

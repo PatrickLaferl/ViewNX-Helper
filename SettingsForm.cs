@@ -1,6 +1,7 @@
 ﻿namespace ViewNxHelper
 {
     using System;
+    using System.Drawing;
     using System.Windows.Forms;
 
     public partial class SettingsForm : Form
@@ -22,7 +23,12 @@
         public SettingsForm()
         {
             this.InitializeComponent();
+            this.MinimumSize = new Size(this.MinimumSize.Width, this.Height);
+            this.ApplySettings();
+        }
 
+        private void ApplySettings()
+        {
             var settings = Properties.Settings.Default;
             this.progPathText.Text = settings.TargetProgramPath;
             this.procNameText.Text = settings.TargetProcName;
@@ -37,6 +43,7 @@
             settings.TargetProcName = this.procNameText.Text;
             settings.LoadTreshold = (int)this.loadTreshSpinner.Value;
             settings.UpdateInterval = (int)this.intervalSpinner.Value;
+            settings.Save();
             this.Close();
         }
 
@@ -50,6 +57,16 @@
         {
             Instance = null;
             base.OnClosed(e);
+        }
+
+        private void restoreButton_Click(object sender, EventArgs e)
+        {
+            var d = MessageBox.Show("Discard changed settings?", "Restore settings", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (d == DialogResult.OK)
+            {
+                Properties.Settings.Default.Reset();
+                this.ApplySettings();
+            }
         }
     }
 }
