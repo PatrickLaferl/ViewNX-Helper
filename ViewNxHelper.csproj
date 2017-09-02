@@ -7,7 +7,7 @@
     <ProjectGuid>{36992920-4489-4985-ABC4-05E686354740}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ViewNxHelper</RootNamespace>
-    <AssemblyName>ViewNX Helper</AssemblyName>
+    <AssemblyName>ViewNX-Helper</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
