@@ -23,7 +23,7 @@
         [DllImport("user32.dll")]
         static extern IntPtr GetForegroundWindow();
 
-        enum State
+        private enum State
         {
             Inactive,
             Ready,
@@ -39,11 +39,11 @@
             this.InitializeComponent();
 
             this.updateTimer = new Timer();
-            this.updateTimer.Interval = Properties.Settings.Default.UpdateInterval;
+            this.updateTimer.Interval = this.Settings.UpdateInterval;
             this.updateTimer.Tick += this.UpdateTimer_Tick;
 
             this.startTimer = new Timer();
-            this.startTimer.Interval = Properties.Settings.Default.UpdateInterval;
+            this.startTimer.Interval = this.Settings.UpdateInterval;
             this.startTimer.Tick += this.StartTimer_Tick;
             this.startTimer.Start();
 
